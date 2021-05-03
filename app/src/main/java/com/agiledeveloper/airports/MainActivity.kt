@@ -28,10 +28,9 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // FIXME なぜか動かないので、最初から押せるようにしておく
         // 空港コードに何か記入されたら押せるようにする
-        // addAirportCode.isEnabled = false
-        addAirportCode.addTextChangedListener(object: TextWatcher {
+        addAirportCode.isEnabled = false
+        airportCode.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
                 addAirportCode.isEnabled = airportCode.text.isNotBlank()
             }
